@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<math.h>
+int isprime(int n);
+int main(){
+	int i;
+	int p,q;
+	for(p=1;p<10;p++){
+		for(q=1;q<10;q++){//只能开10了，开大了的话太多了。
+			if(isprime(pow(p,q)+pow(q,p))==0){
+				printf("%d %d",p,q);
+				printf("\n");
+			}
+		}
+	}
+	return 0;
+}
+int isprime(int n){
+	int ret=0;
+	int i;
+	for(i=2;i<=n/2;i++){
+		if(n%i==0){
+			ret=1;
+			break;
+		}
+	}
+	return ret;
+}
+//感觉和作业四的区别就只是少了个限制条件，但确实就多好多。
